@@ -12,6 +12,9 @@ class CadastroForm(forms.ModelForm):
 
 
 class LoginForm(AuthenticationForm):
-    class Meta:
-        model = Cadastro
-        fields = ("username", "password")
+    username = forms.CharField(
+        widget=forms.TextInput(attrs={"class": "form-control"}), required=True
+    )
+    password = forms.CharField(
+        widget=forms.PasswordInput(attrs={"class": "form-control"}), required=True
+    )

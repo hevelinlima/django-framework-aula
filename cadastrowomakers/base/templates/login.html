@@ -5,8 +5,10 @@
   <h1>Login</h1>
   <form action="." method="post">
     {% csrf_token %}
-    <input type="text" name="username" placeholder="Nome ou email">
-    <input type="password" name="password" placeholder="Senha">
+    {{ form.username.label_tag }} {{ form.username }}
+    {{ form.password.label_tag }} {{ form.password }}
     <button type="submit" class="btn btn-primary btn-block">Entrar</button>
     </form>
   {% endblock %}
+
+ 
